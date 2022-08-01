@@ -15,7 +15,8 @@ class ProductsController < ApplicationController
 
     @products = Product.all.page(page_number).per(per_page)
 
-    paginate json: @products
+    # paginate json: @products
+    render json: @products
   end
 
   # GET /products/1
