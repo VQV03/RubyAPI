@@ -9,7 +9,13 @@ class CustomersController < ApplicationController
 
     @customers = Customer.all.page(page_number).per(per_page)
 
-    paginate json: @customers
+    render json: @customers
+  end
+
+  def all
+    @customers = Customer.all
+
+    render json: @customers
   end
 
   # GET /customers/1
@@ -50,6 +56,6 @@ class CustomersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_params
-      params.require(:customer).permit(:name, :email, :birthdate, :cpf, :address)
+      params.require(:customer).permit(:name, :email, :birthdate, :cpf, :address, :phone1, :phone2)
     end
 end

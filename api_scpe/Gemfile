@@ -22,6 +22,8 @@ gem "foreman"
 gem 'kaminari'
 gem 'api-pagination'
 
+gem 'rack-cors'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 

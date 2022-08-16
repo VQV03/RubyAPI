@@ -16,12 +16,18 @@ class ProductsController < ApplicationController
     @products = Product.all.page(page_number).per(per_page)
 
     # paginate json: @products
+    render json: @products #, show_category: (param? params[:category]), show_unit: (param? params[:unit])
+  end
+
+  def all
+    @products = Product.all
+
     render json: @products
   end
 
   # GET /products/1
   def show
-    render json: @product, include: [:category, :unit]
+    render json: @product
   end
 
   # POST /products
@@ -57,7 +63,7 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :description, :quantity_in_stock, :price, :highlight, :category_id, :unit_id)
+      params.require(:product).permit(:name, :description, :quantity_in_stock, :price, :highlight, :category_id, :unit_id, :image)
     end
 
     def authenticate

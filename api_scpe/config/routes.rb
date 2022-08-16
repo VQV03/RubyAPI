@@ -6,11 +6,18 @@ Rails.application.routes.draw do
   #PRODUTOS
   resources :categories
   resources :units
-  resources :products 
+  resources :products do 
+    collection do 
+      get :all
+    end
+  end
   
   #CLIENTE
-  resources :customers
-  resources :phones
+  resources :customers do 
+    collection do 
+      get :all
+    end
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

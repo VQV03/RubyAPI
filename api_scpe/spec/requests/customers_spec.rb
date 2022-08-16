@@ -29,7 +29,9 @@ RSpec.describe "/customers", type: :request do
       email: Faker::Internet.email,
       birthdate: Faker::Date.between(from: 65.years.ago, to: 18.years.ago),
       cpf: Faker::IDNumber.brazilian_citizen_number(formatted: true),
-      address: Faker::Address.full_address
+      address: Faker::Address.full_address,
+      phone1: Faker::PhoneNumber.cell_phone,
+      phone2: Faker::PhoneNumber.cell_phone
     }
   }
 
@@ -39,7 +41,8 @@ RSpec.describe "/customers", type: :request do
       email: "",
       birthdate: "",
       cpf: "",
-      address: ""
+      address: "",
+      phone1: ""
     }
   }
 
