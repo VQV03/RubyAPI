@@ -3,7 +3,7 @@ class CustomerSerializer < ActiveModel::Serializer
 
   def attributes(*args)
     h = super(*args)
-    h[:birthdate] = object.birthdate.to_time.strftime("%d/%m/%Y") unless object.birthdate.blank? #Formato ISO9001
+    h[:birthdate] = object.birthdate.to_time.strftime("%Y-%m-%d") unless object.birthdate.blank?   #.strftime("%d/%m/%Y") #Formato ISO9001
     h
   end
 end

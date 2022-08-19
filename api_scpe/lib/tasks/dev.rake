@@ -37,6 +37,7 @@ namespace :dev do
 
     puts "Cadastrando os Produtos"
     
+    images = ["https://a-static.mlcdn.com.br/280x210/iphone-11-apple-128gb-branco-61-12mp-ios/magazineluiza/155611200/af1cd7d9c89d7306b52490a0ce1b8b34.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Desktop_computer_clipart_-_Yellow_theme.svg/260px-Desktop_computer_clipart_-_Yellow_theme.svg.png", "https://www.jbl.com.br/on/demandware.static/-/Sites-JB-BR-Library/default/dw1a812092/glp/fones-de-ouvido/images/cat-02.png", "https://www.notebookcheck.info/uploads/tx_nbc2/SL4_AMD_1.jpg", "https://a-static.mlcdn.com.br/1500x1500/smartphone-samsung-galaxy-a22-128gb-branco-4g-4gb-ram-tela-64-cam-quadrupla-selfie-13mp/magazineluiza/231143800/78765d6cd40d05a820e8ff663a29bc20.jpg", "https://i.dell.com/is/image/DellContent//content/dam/ss2/product-images/peripherals/input-devices/dell/keyboards/aw510k/gray/ng/keyboard-alienware-aw510k-campaign-hero-504x350-ng.psd?fmt=jpg", "https://images.kabum.com.br/produtos/fotos/104147/mouse-gamer-razer-viper-16-000-dpi_mouse-gamer-razer-viper-16-000-dpi_1569433267_gg.jpg", "https://www.lg.com/br/images/monitores/md07542961/gallery/Dm-02.jpg"]
 
     100.times do |i|
       Product.create!(
@@ -47,7 +48,7 @@ namespace :dev do
         highlight: Faker::Boolean.boolean,
         category: Category.all.sample,
         unit: Unit.all.sample,
-        image: "https://guiademarketing.com.br/wp-content/uploads/2017/04/produtos.jpg"
+        image: images.sample
       )
     end
 
